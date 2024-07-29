@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu8m0aukya11h"]
+
+[ext_resource type="PackedScene" uid="uid://4xsesr46m783" path="res://misc/meat.tscn" id="1_6dief"]
+
+[node name="GoldenMeat" instance=ExtResource("1_6dief")]
+self_modulate = Color(2.5, 1.5, 0, 1)
+frame = 6
+frame_progress = 1.0
+regenerator_amount = 100.0

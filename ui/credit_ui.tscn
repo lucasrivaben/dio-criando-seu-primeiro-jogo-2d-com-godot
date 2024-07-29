@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://fpiqp37j0lo1"]
+
+[ext_resource type="Script" path="res://ui/credit_ui.gd" id="1_xcthc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_224gk"]
+load_path = "res://.godot/imported/Banner_Horizontal.png-302ea592944586001673d7b987b119b7.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j5ok0"]
+texture = SubResource("CompressedTexture2D_224gk")
+texture_margin_left = 40.0
+texture_margin_top = 24.0
+texture_margin_right = 40.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(24, 40, 144, 136)
+
+[sub_resource type="SystemFont" id="SystemFont_j2yy3"]
+font_names = PackedStringArray("Monospace")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_86d74"]
+font = SubResource("SystemFont_j2yy3")
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="CreditUI" type="CanvasLayer"]
+script = ExtResource("1_xcthc")
+
+[node name="BottomPanel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 32.0
+offset_right = -38.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j5ok0")
+
+[node name="Label" type="Label" parent="BottomPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.041
+anchor_right = 0.961
+anchor_bottom = 0.91
+offset_left = 95.976
+offset_top = 31.22
+offset_right = 1.80798
+offset_bottom = 2.20001
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_86d74")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+offset_left = 80.0
+offset_top = 532.0
+offset_right = 143.0
+offset_bottom = 564.0
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

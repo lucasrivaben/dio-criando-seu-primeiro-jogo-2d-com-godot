@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://dagjnqqsn7dw3"]
+
+[ext_resource type="Texture2D" uid="uid://bio4ff3ol4511" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_8vexf"]
+[ext_resource type="Script" path="res://ui/game_ui.gd" id="1_homj8"]
+[ext_resource type="Texture2D" uid="uid://dnot8c5t3pn68" path="res://addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_5mrv0"]
+
+[sub_resource type="SystemFont" id="SystemFont_nofpw"]
+font_names = PackedStringArray("Monospace")
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_whhld"]
+font = SubResource("SystemFont_nofpw")
+font_size = 24
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5eve"]
+texture = ExtResource("1_8vexf")
+texture_margin_left = 32.0
+texture_margin_top = 24.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+region_rect = Rect2(32, 40, 128, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pe4k"]
+atlas = ExtResource("3_5mrv0")
+region = Rect2(40, 48, 56, 56)
+
+[sub_resource type="SystemFont" id="SystemFont_amrcc"]
+font_names = PackedStringArray("Monospace")
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_62nae"]
+font = SubResource("SystemFont_amrcc")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_homj8")
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_top = 20.0
+offset_right = 20.5
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "08:30"
+label_settings = SubResource("LabelSettings_whhld")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -191.0
+offset_bottom = 103.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_s5eve")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_top = 11.0
+offset_right = -30.0
+offset_bottom = 67.0
+grow_horizontal = 0
+texture = SubResource("AtlasTexture_2pe4k")
+
+[node name="MeatLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 26.0
+offset_right = -96.0
+offset_bottom = 60.0
+grow_horizontal = 0
+text = "50"
+label_settings = SubResource("LabelSettings_62nae")
+horizontal_alignment = 2
